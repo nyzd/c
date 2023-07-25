@@ -1,19 +1,6 @@
+#include "./dynamic_array.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-#define Uint unsigned int
-
-typedef struct array_type {
-  // The Allocated memory size
-  // starts from 1
-  Uint capacity;
-  // The length of array
-  // starts from 0
-  Uint length;
-
-  // The pointer to start of array
-  Uint *array;
-} Array;
 
 // Creates the new array and returns the pointer
 Array *new_array() {
@@ -40,7 +27,7 @@ int array_push(Array *array, int item) {
       return 1;
     }
 
-    // Multiply capacity with 
+    // Multiply capacity with
     // this is the way the dynamic array works
     array->capacity *= 2;
 
