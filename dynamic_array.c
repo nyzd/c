@@ -4,9 +4,14 @@
 #define Uint unsigned int
 
 typedef struct array_type {
+  // The Allocated memory size
+  // starts from 1
   Uint capacity;
+  // The length of array
+  // starts from 0
   Uint length;
 
+  // The pointer to start of array
   Uint *array;
 } Array;
 
@@ -30,10 +35,13 @@ int array_push(Array *array, int item) {
     // We need to reallocate
     Uint *new_alloc = realloc(array->array, array->capacity * 2);
 
+    // if we cant allocate
     if (new_alloc == NULL) {
       return 1;
     }
 
+    // Multiply capacity with 
+    // this is the way the dynamic array works
     array->capacity *= 2;
 
     // New pointer
@@ -59,6 +67,10 @@ Uint *array_get(Array *array, Uint index) {
   return &array->array[index];
 }
 
+// copy array to a new array
+//
+// new_a[n] = a[n]
+// n <= a.length
 Array *array_copy(Array *array) {
   Array *clone_array = new_array();
   Uint i = 0;
