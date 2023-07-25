@@ -7,5 +7,5 @@ to describe the code, and algorithms.
 Here is a brief description for every C file in this repo
 
 - `dynamic_array.c` Dynamic array in c 
-- `print_str.c` A function for printing c string to stdout (learning pointer arithmatics)
+- `print_str.c` A function for printing c string to stdout (learning pointer arithmatics) (NOT COMPLETED)
 
