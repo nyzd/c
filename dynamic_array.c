@@ -5,13 +5,13 @@
 // Creates the new array and returns the pointer
 Array *new_array() {
   // Allocate the memory
-  Array *new_a = malloc(sizeof(Array));
+  Array *new_a = (Array *)malloc(sizeof(Array));
 
   new_a->capacity = 1;
   new_a->length = 0;
 
   // Allocate array for just one item
-  new_a->array = malloc(1);
+  new_a->array = (Uint *)malloc(1);
 
   return new_a;
 }
@@ -20,7 +20,9 @@ Array *new_array() {
 int array_push(Array *array, int item) {
   if (array->capacity == array->length) {
     // We need to reallocate
-    Uint *new_alloc = realloc(array->array, array->capacity * 2);
+    // FIX: Is this OK? im so noob at c
+    Uint *new_alloc =
+        (Uint *)realloc(array->array, sizeof(int) * array->capacity * 2);
 
     // if we cant allocate
     if (new_alloc == NULL) {
@@ -69,20 +71,4 @@ Array *array_copy(Array *array) {
   } while (array->length != i);
 
   return clone_array;
-}
-
-int main(void) {
-  Array *a1 = new_array();
-
-  array_push(a1, 10);
-  array_push(a1, 256);
-  array_push(a1, 'c');
-
-  Array *a1_clone = array_copy(a1);
-  Uint *first_item = array_get(a1_clone, 1);
-
-  printf("%i %i, %i, a1: %p a1_clone: %p", a1->length, a1->capacity,
-         *first_item, a1, a1_clone);
-
-  return 0;
 }

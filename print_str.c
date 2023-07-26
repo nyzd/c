@@ -25,15 +25,8 @@ int print_str(char *str) {
   // When we create a string in c, it will allocate the size of
   // the string + 1, and it will put 0 at the end of the string
   // so the developers can determine the end of the string
-  while (*(pointer) != 0);
+  while (*pointer != 0);
 
   return 0;
 }
 
-int main(void) {
-  char *some_string = "Hello World";
-  int ret = print_str(some_string);
-
-  printf(" %i \n", ret);
-  return 0;
-}

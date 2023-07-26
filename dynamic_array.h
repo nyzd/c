@@ -1,4 +1,6 @@
+#ifndef ARRAY_H_
 
+#define ARRAY_H_
 #define Uint unsigned int
 
 typedef struct array_type {
@@ -17,3 +19,5 @@ Array *new_array();
 int array_push(Array *array, int item);
 Uint *array_get(Array *array, Uint index);
 Array *array_copy(Array *array);
+
+#endif // !ARRAY_H_
