@@ -12,3 +12,5 @@ Here is a brief description for every C file in this repo
 
 # References
 Dynamic array. (2023, May 30). In Wikipedia. https://en.wikipedia.org/wiki/Dynamic_array
+
+String (computer science). (2023, July 26). In Wikipedia. https://en.wikipedia.org/wiki/String_(computer_science)
