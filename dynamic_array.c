@@ -11,7 +11,7 @@ Array *new_array() {
   new_a->length = 0;
 
   // Allocate array for just one item
-  new_a->array = (Uint *)malloc(1);
+  new_a->array = (int *)malloc(1);
 
   return new_a;
 }
@@ -21,10 +21,10 @@ int array_push(Array *array, int item) {
   if (array->capacity == array->length) {
     // We need to reallocate
     // FIX: Is this OK? im so noob at c
-    Uint *new_alloc =
-        (Uint *)realloc(array->array, sizeof(int) * array->capacity * 2);
+    int *new_alloc =
+        (int *)realloc(array->array, sizeof(int) * array->capacity * 2);
 
-    // if we cant allocate
+    // if we can't allocate
     if (new_alloc == NULL) {
       return 1;
     }
@@ -46,14 +46,14 @@ int array_push(Array *array, int item) {
   return 0;
 }
 
-Uint *array_get(Array *array, Uint index) {
+int array_get(Array *array, Uint index) {
   if (index >= array->length) {
     // Index out of bound
     printf("Index out of bound %i", index);
     exit(1);
   }
 
-  return &array->array[index];
+  return array->array[index];
 }
 
 // copy array to a new array
@@ -65,7 +65,7 @@ Array *array_copy(Array *array) {
   Uint i = 0;
 
   do {
-    array_push(clone_array, *array_get(array, i));
+    array_push(clone_array, array_get(array, i));
 
     i += 1;
   } while (array->length != i);

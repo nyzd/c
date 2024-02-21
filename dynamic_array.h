@@ -12,12 +12,12 @@ typedef struct array_type {
   Uint length;
 
   // The pointer to start of array
-  Uint *array;
+  int *array;
 } Array;
 
 Array *new_array();
 int array_push(Array *array, int item);
-Uint *array_get(Array *array, Uint index);
+int array_get(Array *array, Uint index);
 Array *array_copy(Array *array);
 
 #endif // !ARRAY_H_

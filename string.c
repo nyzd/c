@@ -39,6 +39,8 @@ String *string_from_chars(char *chars) {
   // so the developers can determine the end of the string
   while (*pointer != 0);
 
+  push_char(new_str, '\0');
+
   return new_str;
 }
 
