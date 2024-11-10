@@ -6,6 +6,7 @@ to describe the code, and algorithms.
 ### Files
 Here is a brief description for every C file in this repo
 
+- `stack.c` Stack impl
 - `dynamic_array.c` Dynamic array in c (NOT COMPLETED) 
 - `string.c` String impl in c (similar to String struct in rust) (NOT COMPLETED) 
 - `print_str.c` A function for printing c string to stdout (learning pointer arithmetics)
